@@ -19,6 +19,7 @@ def halt_old_architecture(path: Path) -> None:
         )
 
 
+
 def upgrade_architecture() -> None:
     currently_installed = installed_versions()
     if len(currently_installed) > 0:

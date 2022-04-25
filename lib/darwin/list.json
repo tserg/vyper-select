@@ -1,35 +1,35 @@
 {
 	"builds": [
 		{
-			"path": "vyper.0.3.0+commit.8a23feb.linux",
+			"path": "vyper.0.3.0+commit.8a23feb.darwin",
 			"version": "0.3.0",
 			"build": "commit.8a23feb",
 			"longVersion": "0.3.0+commit.8a23feb"
 		},
 		{
-			"path": "vyper.0.3.1.linux",
+			"path": "vyper.0.3.1.darwin",
 			"version": "0.3.1",
 			"build": "",
 			"longVersion": "0.3.1"
 		},
 		{
-			"path": "vyper.0.3.2+commit.3b6a4117.linux",
+			"path": "vyper.0.3.2+commit.3b6a4117.darwin",
 			"version": "0.3.2",
 			"build": "commit.3b6a4117",
 			"longVersion": "0.3.2+commit.3b6a4117"
 		},
 		{
-			"path": "vyper.0.3.3+commit.48e326f0.linux",
+			"path": "vyper.0.3.3+commit.48e326f0.darwin",
 			"version": "0.3.3",
 			"build": "commit.48e326f0",
 			"longVersion": "0.3.3+commit.48e326f0"
 		}
 	],
 	"releases": {
-		"0.3.3": "vyper.0.3.3+commit.48e326f0.linux",
-		"0.3.2": "vyper.0.3.2+commit.3b6a4117.linux",
-		"0.3.1": "vyper.0.3.1.linux",
-		"0.3.0": "vyper.0.3.0+commit.8a23feb.linux"
+		"0.3.3": "vyper.0.3.3+commit.48e326f0.darwin",
+		"0.3.2": "vyper.0.3.2+commit.3b6a4117.darwin",
+		"0.3.1": "vyper.0.3.1.darwin",
+		"0.3.0": "vyper.0.3.0+commit.8a23feb.darwin"
 	},
 	"latestRelease": "0.3.3"
 }

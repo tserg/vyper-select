@@ -8,7 +8,7 @@ from .constants import (
     USE_VERSION,
     UPGRADE,
 )
-from .solc_select import (
+from .vyper_select import (
     valid_install_arg,
     valid_version,
     get_installable_versions,
@@ -21,29 +21,29 @@ from .solc_select import (
 )
 
 
-def solc_select() -> None:
+def vyper_select() -> None:
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(
-        help="Allows users to install and quickly switch between Solidity compiler versions"
+        help="Allows users to install and quickly switch between Vyper compiler versions"
     )
     parser_install = subparsers.add_parser(
-        "install", help="list and install available solc versions"
+        "install", help="list and install available Vyper versions"
     )
     parser_install.add_argument(
         INSTALL_VERSIONS,
-        help='specific versions you want to install "0.4.25" or "all"',
+        help='specific versions you want to install "3.0.0" or "all"',
         nargs="*",
         default=list(),
         type=valid_install_arg,
     )
-    parser_use = subparsers.add_parser("use", help="change the version of global solc compiler")
+    parser_use = subparsers.add_parser("use", help="change the version of global Vyper compiler")
     parser_use.add_argument(
-        USE_VERSION, help="solc version you want to use (eg: 0.4.25)", type=valid_version, nargs="?"
+        USE_VERSION, help="Vyper version you want to use (eg: 0.3.0)", type=valid_version, nargs="?"
     )
     parser_use.add_argument("--always-install", action="store_true")
-    parser_use = subparsers.add_parser("versions", help="prints out all installed solc versions")
+    parser_use = subparsers.add_parser("versions", help="prints out all installed Vyper versions")
     parser_use.add_argument(SHOW_VERSIONS, nargs="*", help=argparse.SUPPRESS)
-    parser_use = subparsers.add_parser("upgrade", help="upgrades solc-select")
+    parser_use = subparsers.add_parser("upgrade", help="upgrades vyper-select")
     parser_use.add_argument(UPGRADE, nargs="*", help=argparse.SUPPRESS)
 
     args = vars(parser.parse_args())
@@ -76,11 +76,11 @@ def solc_select() -> None:
         sys.exit(0)
 
 
-def solc() -> None:
+def vyper() -> None:
     res = current_version()
     if res:
         (version, _) = res
-        path = ARTIFACTS_DIR.joinpath(f"solc-{version}", f"solc-{version}")
+        path = ARTIFACTS_DIR.joinpath(f"vyper.{version}", f"vyper.{version}")
         halt_old_architecture(path)
         try:
             process = subprocess.run(
